@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 /**
  * @author 小卢
  */
+@Component
 public class Car {
 
     public Car() {
