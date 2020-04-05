@@ -1,5 +1,6 @@
 package com.lu.test;
 
+import com.lu.bean.ColorFactoryBean;
 import com.lu.bean.Person;
 import com.lu.config.MainConfig;
 import com.lu.config.MainConfig2;
@@ -14,6 +15,10 @@ public class IOCTest {
     @Test
     void importTest() {
         printDefinitionNames(context);
+        Object bean = context.getBean("colorFactoryBean");
+        System.out.println(bean.getClass());
+        Object bean1 = context.getBean("$colorFactoryBean");
+        System.out.println(bean1.getClass());
     }
 
     @Test

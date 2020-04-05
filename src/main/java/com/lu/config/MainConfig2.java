@@ -1,6 +1,7 @@
 package com.lu.config;
 
 import com.lu.bean.Color;
+import com.lu.bean.ColorFactoryBean;
 import com.lu.bean.Person;
 import com.lu.bean.Red;
 import com.lu.condition.LinuxCondition;
@@ -16,6 +17,10 @@ import org.springframework.context.annotation.*;
  *      1.@import(要导入到容器中的组件),容器中就会自动注册这个组件,id默认是全类名
  *      2.ImportSelector:返回需要导入的组件的全类名数组
  *      3.ImportBeanDefinitionRegistrar:搜懂注册bean 到容器中
+ * 4.使用spring提供的FactoryBean(工厂bean)
+ *      1.默认获取到的是工厂bean调用getObject创建的对象
+ *      2.要获取工厂bean本身 ,我们需要给id前面加一个&
+ *          @coloerFactoryBean
  * @author 小卢
  */
 @Configuration
@@ -45,5 +50,10 @@ public class MainConfig2 {
     @Bean(value = "linus")
     public Person person2(){
         return new Person("linus", 50);
+    }
+
+    @Bean
+    public ColorFactoryBean colorFactoryBean() {
+        return new ColorFactoryBean();
     }
 }
