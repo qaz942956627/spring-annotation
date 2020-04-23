@@ -27,6 +27,10 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
  *      @EnableAspectJAutoProxy 这个是基于纯注解的开启aop的注解
  *      在spring中有很多的@Enablexxx;都是开启某一项功能的
  *
+ * 三部:
+ *     1.将业务逻辑组件和切面类都加入到容器中:告诉spring那个是切面类(@Aspect)
+ *     2.在切面类上的每一个通知方法上标注通知注解,告诉spring何时运行(注意写对切入点表达式)
+ *     3.开启基于aop模式:@EnableAspectJAutoProxy <aop:aspectj-autoproxy></aop:aspectj-autoproxy>
  * @author 小卢
  */
 @EnableAspectJAutoProxy

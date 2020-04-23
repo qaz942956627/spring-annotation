@@ -13,20 +13,13 @@ public class TestAop {
     AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(MainConfigOfAOP.class);
 
     @Test
-    void importTest() {
-        System.out.println("容器创建完成");
-        //printDefinitionNames(context);
-        //context.getBean(Car.class);
-    }
-
-    @Test
     void test1() {
         //1.不要自己创建对象
 //        MathCalculator mathCalculator = new MathCalculator();
 //        mathCalculator.div(1, 1);
 
         MathCalculator mathCalculator = context.getBean(MathCalculator.class);
-        mathCalculator.div(1, 1);
+        mathCalculator.div(1, 0);
 
     }
 
