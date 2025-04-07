@@ -13,9 +13,9 @@ public class UserService {
     @Autowired
     private UserDao userDao;
 
-    @Transactional(rollbackFor = Exception.class)
+    @Transactional
     public void insert() {
         userDao.insert();
-        //int i = 1/0;
+        int i = 1/0;
     }
 }
